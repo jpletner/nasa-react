@@ -1,7 +1,6 @@
 import React from 'react';
 
 const AstronomyCard = (props) => {
-
   const { title,
           url,
           hdurl,
