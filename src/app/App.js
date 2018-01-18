@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import AstronomyContainer from './components/AstronomyContainer';
+import MarsRoverContainer from './components/MarsRoverContainer';
 
 const App = () => {
   return (
-    <AstronomyContainer />
+    <div>
+      <AstronomyContainer />
+      <MarsRoverContainer />
+    </div>,
+    document.body
   )
 }
 

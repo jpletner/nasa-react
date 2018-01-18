@@ -1,7 +1,6 @@
 import React from 'react';
 
 const AstronomyCard = (props) => {
-
   const { title,
           url,
           hdurl,
@@ -37,7 +36,8 @@ const AstronomyCard = (props) => {
 
   return (
     <div className="astronomy-card">
-      <h6 className="astronomy-title">{title}</h6>
+      <h6 className="astronomy-title">Nasa Photo of the Day</h6>
+      <h8 className="photo-title">{title}</h8>
 
       {renderContent()}
 
