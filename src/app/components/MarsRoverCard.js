@@ -1,18 +1,19 @@
+import _ from 'lodash';
 import React from 'react';
 
 const MarsRoverCard = (props) => {
   let images = [];
-  const date = null;
   const photos = props.data.photos;
-  const label = "Earth Date: "
-  if (typeof photos !== 'undefined') {
-    images = photos.map((image) => {
+  const unique_photos = _.uniqBy(photos, 'img_src');
+  const label = "Earth Date: ";
+
+  if (typeof unique_photos !== 'undefined') {
+    images = unique_photos.map((image) => {
       const img_src = image.img_src;
-      const date = image.earth_date;
+
 
         return (
             <li key= {image.id}>
-              <h6>{label}{date}</h6>
               <a href={img_src} className="astronomy-image-wrapper">
                 <img src={img_src}/>
               </a>
@@ -23,9 +24,10 @@ const MarsRoverCard = (props) => {
 
   return (
     <div className="astronomy-card">
-      <h6 className="astronomy-title">"Mars Rover Photos of the Day"</h6>
+      <h6 className="rover-title">Mars Rover Photos</h6>
+      <h8 className="photo-title">Earth Date: May 30, 2015</h8>
       <div>
-        <ol className="astronomy-image-wrapper">{images}</ol>
+        <ol>{images}</ol>
       </div>
     </div>
   )
